@@ -7,7 +7,7 @@ apply plugin: "com.liferay.target.platform"
 apply plugin: "com.liferay.plugin"
 
 dependencies {
-    compileOnly group: "biz.aQute.bnd", name: "biz.aQute.bnd.annotation", version: "4.2.0"
+    compileOnly group: "biz.aQute.bnd", name: "biz.aQute.bnd.annotation", version: "7.1.0"
 
     compileOnly group: "org.slf4j", name: "slf4j-api"
 
@@ -23,8 +23,8 @@ dependencies {
 
     compileOnly group: "org.apache.felix", name: "org.apache.felix.dependencymanager", version: "4.6.0"
 
-    compileOnly group: "org.projectlombok", name: "lombok", version: "1.18.12"
-    annotationProcessor group: "org.projectlombok", name: "lombok", version: "1.18.12"
+    compileOnly group: "org.projectlombok", name: "lombok", version: "1.18.36"
+    annotationProcessor group: "org.projectlombok", name: "lombok", version: "1.18.36"
 
     targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "$liferayVersion"
     targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "$liferayVersion"
@@ -35,11 +35,10 @@ def defaultEncoding = "UTF-8"
 
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "2.1.23"
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "10.0.18"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "4.0.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "15.0.119"
     }
     repositories {
-        jcenter()
         mavenCentral()
         maven {
             url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -49,15 +48,14 @@ buildscript {
 
 repositories {
     mavenCentral()
-    jcenter()
-    maven { url "http://repository.jboss.org/nexus/content/groups/public-jboss" }
-    maven { url "http://repository.apache.org/content/groups/public" }
-    maven { url "http://repository.springsource.com/maven/bundles/release" }
-    maven { url "http://repository.codehaus.org" }
-    maven { url "http://download.java.net/maven/2" }
-    maven { url "http://download.java.net/maven/glassfish" }
-    maven { url "http://m2repo.spockframework.org/snapshots" }
-    maven { url "http://repository.sonatype.org/content/groups/public" }
+    maven { url "https://repository.jboss.org/nexus/content/groups/public-jboss" }
+    maven { url "https://repository.apache.org/content/groups/public" }
+    maven { url "https://repository.springsource.com/maven/bundles/release" }
+    maven { url "https://repository.codehaus.org" }
+    maven { url "https://download.java.net/maven/2" }
+    maven { url "https://download.java.net/maven/glassfish" }
+    maven { url "https://m2repo.spockframework.org/snapshots" }
+    maven { url "https://repository.sonatype.org/content/groups/public" }
     maven { url "https://mvnrepository.com/artifact/com.sun/tools" }
     maven { url "https://jitpack.io" }
 }

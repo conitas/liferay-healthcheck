@@ -1,8 +1,16 @@
 Bundle-Name: Health Check
 Bundle-SymbolicName: com.github.lgdd.liferay.health
-Bundle-Version: 2.0.1
+Bundle-Version: 2.0.2
 Export-Package:\
     com.github.lgdd.liferay.health.api;
+
+Import-Package:\
+    !jakarta.annotation.*,\
+    !javax.el*,\
+    !javax.servlet*,\
+    !javax.ws*,\
+    !javax.ws.rs,\
+    *
 
 -consumer-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
 -provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

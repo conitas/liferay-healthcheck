@@ -2,18 +2,19 @@ package com.github.lgdd.liferay.health;
 
 import com.github.lgdd.liferay.health.api.HealthCheckResponse;
 import com.github.lgdd.liferay.health.api.HealthCheckStatus;
-import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+
+import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Application;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
@@ -139,6 +140,7 @@ public class HealthCheck
   }
 
 
+  @Override
   public Set<Object> getSingletons() {
 
     return Collections.singleton(this);

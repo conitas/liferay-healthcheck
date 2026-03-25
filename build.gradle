@@ -11,7 +11,7 @@ dependencies {
 
     compileOnly group: "org.slf4j", name: "slf4j-api"
 
-    compileOnly group: "javax.ws.rs", name: "javax.ws.rs-api"
+    compileOnly group: "jakarta.ws.rs", name: "jakarta.ws.rs-api", version: "3.1.0"
 
     compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
     compileOnly group: "com.liferay", name: "com.liferay.portal.configuration.metatype.api"
@@ -26,17 +26,17 @@ dependencies {
     compileOnly group: "org.projectlombok", name: "lombok", version: "1.18.36"
     annotationProcessor group: "org.projectlombok", name: "lombok", version: "1.18.36"
 
-    targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "$liferayVersion"
-    targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "$liferayVersion"
-    targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.third.party", version: "$liferayVersion"
+    targetPlatformBoms group: "com.liferay.portal", name: "release.dxp.bom", version: "$liferayVersion"
+    targetPlatformBoms group: "com.liferay.portal", name: "release.dxp.bom.compile.only", version: "$liferayVersion"
+    targetPlatformBoms group: "com.liferay.portal", name: "release.dxp.bom.third.party", version: "$liferayVersion"
 }
 
 def defaultEncoding = "UTF-8"
 
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "4.0.1"
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "15.0.119"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "4.0.2"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "16.1.106"
     }
     repositories {
         mavenCentral()
@@ -48,16 +48,7 @@ buildscript {
 
 repositories {
     mavenCentral()
-    maven { url "https://repository.jboss.org/nexus/content/groups/public-jboss" }
-    maven { url "https://repository.apache.org/content/groups/public" }
-    maven { url "https://repository.springsource.com/maven/bundles/release" }
-    maven { url "https://repository.codehaus.org" }
-    maven { url "https://download.java.net/maven/2" }
-    maven { url "https://download.java.net/maven/glassfish" }
-    maven { url "https://m2repo.spockframework.org/snapshots" }
-    maven { url "https://repository.sonatype.org/content/groups/public" }
-    maven { url "https://mvnrepository.com/artifact/com.sun/tools" }
-    maven { url "https://jitpack.io" }
+    maven { url "https://repository.liferay.com/nexus/content/repositories/public" }
 }
 
 task sourcesJar(type: Jar) {
